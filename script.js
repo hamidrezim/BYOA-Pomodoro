@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerInterval;
     let timeLeft = 30 * 60; // 30 minutes in seconds
     let isRunning = false;
+    let isDarkMode = false;
 
     // Mode durations in seconds
     const modes = {
@@ -70,6 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reset timer
     function resetTimer() {
+        // Toggle dark mode
+        isDarkMode = !isDarkMode;
+        
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+        
         // Stop timer
         clearInterval(timerInterval);
         isRunning = false;

@@ -13,6 +13,11 @@ body {
     min-height: 100vh;
     color: #3a3a3a;
     position: relative;
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: rgb(0, 65, 14);
 }
 
 body::before {
@@ -24,6 +29,11 @@ body::before {
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.65);
     z-index: 1;
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode::before {
+    background-color: rgba(255, 255, 255, 0.45);
 }
 
 .container {
@@ -39,6 +49,71 @@ body::before {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.dark-mode .container {
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.reset-corner {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #bd4f46;
+    color: white;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.reset-corner::before {
+    content: '☀️';
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.reset-corner::after {
+    content: '🌙';
+    position: absolute;
+    transform: translateY(30px);
+    transition: transform 0.3s ease;
+}
+
+.reset-corner:hover {
+    background-color: #a33c34;
+}
+
+body:not(.dark-mode) .reset-corner:hover::before {
+    transform: translateY(-30px);
+}
+
+body:not(.dark-mode) .reset-corner:hover::after {
+    transform: translateY(0);
+}
+
+body.dark-mode .reset-corner::before {
+    transform: translateY(-30px);
+}
+
+body.dark-mode .reset-corner::after {
+    transform: translateY(0);
+}
+
+body.dark-mode .reset-corner:hover::before {
+    transform: translateY(0);
+}
+
+body.dark-mode .reset-corner:hover::after {
+    transform: translateY(30px);
 }
 
 h1 {

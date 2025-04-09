@@ -10,6 +10,10 @@
     <div class="container">
         <button id="reset" class="reset-corner"></button>
         <h1>Pomodoro Timer</h1>
+        <div id="goal-container" class="hidden">
+            <div class="goal-label">Current Goal:</div>
+            <div id="current-goal"></div>
+        </div>
         <div class="timer">
             <div id="time">30:00</div>
         </div>
@@ -28,6 +32,19 @@
             <button id="long-break">Long Break</button>
         </div>
     </div>
+    
+    <!-- Goal Modal -->
+    <div id="goal-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>What do you want to accomplish?</h2>
+            <textarea id="goal-input" placeholder="Enter your goal for this session..."></textarea>
+            <div class="modal-buttons">
+                <button id="goal-submit">Start Timer</button>
+                <button id="goal-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html> 

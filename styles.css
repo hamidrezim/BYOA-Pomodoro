@@ -118,15 +118,54 @@ body.dark-mode .reset-corner:hover::after {
 
 h1 {
     color: #333;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 1.5rem;
 }
 
+#goal-container {
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    background-color: rgba(0, 128, 28, 0.1);
+    border-radius: 8px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#goal-container.hidden {
+    display: none;
+}
+
+.goal-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+#current-goal {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+body.dark-mode #goal-container {
+    background-color: rgba(0, 65, 14, 0.15);
+}
+
+body.dark-mode .goal-label {
+    color: #777;
+}
+
+body.dark-mode #current-goal {
+    color: #444;
+}
+
 .timer {
-    margin: 2.5rem 0;
+    margin: 2rem 0;
 }
 
 #time {
@@ -263,4 +302,94 @@ button {
 
 .smile-row button {
     width: 110px;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.modal.hidden .modal-content {
+    transform: scale(0.8);
+}
+
+.modal h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: 400;
+    text-align: center;
+}
+
+#goal-input {
+    width: 100%;
+    height: 120px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#goal-input:focus {
+    outline: none;
+    border-color: rgb(0, 128, 28);
+    box-shadow: 0 0 0 2px rgba(0, 128, 28, 0.2);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-buttons button {
+    padding: 0.8rem 1.5rem;
+    min-width: 120px;
+}
+
+#goal-submit {
+    background-color: #1c2a38;
+    color: white;
+}
+
+#goal-submit:hover {
+    background-color: #0d1420;
+}
+
+#goal-cancel {
+    background-color: #f0ece8;
+    color: #666;
+}
+
+#goal-cancel:hover {
+    background-color: #e3ddd6;
 } 

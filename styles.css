@@ -50,6 +50,7 @@ body.dark-mode::before {
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    margin: 0 15px;
 }
 
 body.dark-mode .container {
@@ -273,6 +274,7 @@ button {
     justify-content: center;
     gap: 0.8rem;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .mode-selector button {
@@ -392,4 +394,64 @@ button {
 
 #goal-cancel:hover {
     background-color: #e3ddd6;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.8rem 1.2rem;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    #time {
+        font-size: 4rem;
+    }
+    
+    .mode-selector {
+        gap: 0.5rem;
+    }
+    
+    .mode-selector button {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    button {
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .controls-row button {
+        width: 100px;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    #time {
+        font-size: 3.5rem;
+    }
+    
+    .controls-row button {
+        width: 90px;
+        padding: 0.7rem 0.5rem;
+    }
+    
+    .mode-selector button {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.7rem;
+    }
 } 
